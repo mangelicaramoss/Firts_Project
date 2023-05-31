@@ -1,0 +1,124 @@
+*{
+    background-color: beige;
+    
+}   
+
+
+.logo{
+    padding-top: 10px 0;
+    margin-left: 10px 0;
+    width: 8%;
+    background:none;
+}
+
+main{
+    display: flex;
+    margin-bottom: 10px;
+    margin: 10px;
+    background: none;
+}
+
+
+.texto-area{
+    font-size: 30px;
+    margin-top: 30px;
+    padding: 15px;
+    text-transform: lowercase;
+    border: none;
+    background:none;
+    
+}
+
+::placeholder{ color: gray;}
+    .texto-area:focus {
+        outline: none;
+    }
+.sect-resultado{
+    margin-left: 8%;
+    width: 40%;
+}
+
+.resultado{
+    background: none;
+    background-image: url(images/wait.gif) ;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 24px;    
+    color: #c69a84a7;
+    margin-left: 10px;
+    margin-top: 15px;
+    padding: 15px;
+    position: relative;
+    width: 89%;
+    font-size: 30px;
+    
+}
+
+.resultado:focus{
+    outline: none;
+}
+
+
+.botones{
+    display: flex;
+    margin-top: 18px;
+}
+
+.encriptar{
+    background: rgb(190, 126, 111);
+    border: #c69a84a7;
+    border-radius: 24px;
+    color: #ffffffa7;
+    cursor: pointer;
+    height: 67px;
+    width: 280px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.encriptar:hover{
+    background: white;
+    color: gray;
+    transform: scale(1.2);
+}
+
+.desencriptar{
+    background: white;
+    border: 2px solid #c58a6da4;
+    border-radius: 24px;
+    color: #ae836da7;
+    cursor: pointer;
+    height: 67px;
+    width: 280px;
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.desencriptar:hover{
+    background: #c69a84a7;
+    color: gray;
+    transform: scale(1.2);
+}
+
+.copiar{
+    background: white;
+    border: 2px solid #c69a84a7;
+    border-radius: 24px;
+    color: #ae836da7;
+    cursor: pointer;
+    height: 67px;
+    width: 280px;
+    margin-left: 10%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 1s all;
+    margin-top: 52px;
+    position:absolute;
+}
+
+.informacion{
+    color: #495057;
+    font-size: 18px;
+}

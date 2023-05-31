@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Encriptador y Desencriptador cat</title>
+        <link rel="stylesheet" href="reset-encriptador.css">
+        <link rel="stylesheet" href="style-encriptador.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <header>
+            <img src="images/logo-gato.jpg.png" class="logo" alt="Logo">
+        </header>
+
+        <main>
+
+            <section>
+
+                <textarea class="texto-area" cols="30" rows="15" placeholder="Ingrese el texto aquí"></textarea>
+
+                <div>
+                    <h6 class="informacion">Solo letras minúsculas y sin acento</h6>
+                </div>
+
+                <div class="botones">
+                    <button onclick="encriptar()" class="encriptar">Encriptar</button>
+                    <button onclick="desencriptar()"  class="desencriptar" >Desencriptar</button>
+                </div>
+
+            </section>
+            
+            <section class="sect-resultado">
+                
+                <textarea class="resultado" rows="15" cols="20"></textarea>
+                
+                <div>
+                    <button onclick="copiar()" class="copiar">Copiar</button>
+                </div>
+            </section>
+        
+            <script>
+                function encriptar() {
+                var texto = document.querySelector(".texto-area").value.toLowerCase();
+                var resultado = "";
+                //resultado.style.backgroundImage = "none"
+                
+
+                for (var i = 0; i < texto.length; i++) {
+                    switch (texto.charAt(i)) {
+                    case "e":
+                        resultado += "enter";
+                        break;
+                    case "i":
+                        resultado += "imes";
+                        break;
+                    case "a":
+                        resultado += "ai";
+                        break;
+                    case "o":
+                        resultado += "ober";
+                        break;
+                    case "u":
+                        resultado += "ufat";
+                        break;
+                    default:
+                        resultado += texto.charAt(i);
+                        break;
+                    }
+                }
+
+                //document.querySelector(".resultado").value = resultado;
+                var resultadoDiv = document.querySelector(".resultado");
+                resultadoDiv.style.backgroundImage = "none";
+                resultadoDiv.textContent = resultado;
+                }
+
+                function desencriptar() {
+                var texto = document.querySelector(".texto-area").value.toLowerCase();
+                var resultado = "";
+
+                var i = 0;
+                while (i < texto.length) {
+                    if (texto.substring(i, i + 5) === "enter") {
+                    resultado += "e";
+                    i += 5;
+                    } else if (texto.substring(i, i + 4) === "imes") {
+                    resultado += "i";
+                    i += 4;
+                    } else if (texto.substring(i, i + 2) === "ai") {
+                    resultado += "a";
+                    i += 2;
+                    } else if (texto.substring(i, i + 4) === "ober") {
+                    resultado += "o";
+                    i += 4;
+                    } else if (texto.substring(i, i + 4) === "ufat") {
+                    resultado += "u";
+                    i += 4;
+                    } else {
+                    resultado += texto.charAt(i);
+                    i++;
+                    }
+                }
+
+                document.querySelector(".resultado").value = resultado;
+                //var resultadoDiv = document.querySelector(".resultado");
+                //resultadoDiv.style.backgroundImage = "none";
+                //resultadoDiv.textContent = resultado;
+                }
+
+                function copiar() {
+                var resultado = document.querySelector(".resultado");
+                resultado.select();
+                document.execCommand("copy");
+                resultado.value = "";
+                document.querySelector(".texto-area").value = ""; // Vaciar el cuadro de texto "texto"
+                }
+            </script>
+        </main>
+        
+    </body>
+</html>
